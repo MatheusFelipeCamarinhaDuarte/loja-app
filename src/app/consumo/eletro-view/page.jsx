@@ -18,7 +18,7 @@ export default async function EletroView() {
         <div>
             <h1>Página dos Eletrônicos</h1>
         
-            <div>
+            <div className="card-eletro-view">
                 <ul>
                     {
                         items.map((item)=>(
