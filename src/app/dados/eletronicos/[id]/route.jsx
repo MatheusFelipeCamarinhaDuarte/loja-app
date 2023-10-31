@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server"
 
-export async function GET() {
 
     const eletros = [
-        {"id": 1, "nome": "TV" , "preco": 1000, "descricao": "TV 4K", img: "https://images.pexels.com/photos/6316063/pexels-photo-6316063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+        {"id": 1, "nome": "TV" , "preco": 1000, "descricao": "TV 4K", "img": "https://images.pexels.com/photos/6316063/pexels-photo-6316063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
         {"id": 2, "nome": "Smartphone", "preco": 500, "descrição": "Smartphone Android", "img": "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
         {"id": 3, "nome": "Notebook", "preco": 1200, "descrição": "Notebook com SSD", "img": "https://images.pexels.com/photos/3999538/pexels-photo-3999538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
         {"id": 4, "nome": "Fones de Ouvido", "preco": 50, "descrição": "Fones de Ouvido Bluetooth", "img": "https://images.pexels.com/photos/8534088/pexels-photo-8534088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -15,17 +14,26 @@ export async function GET() {
         {"id": 10, "nome": "Monitor de Computador", "preco": 200, "descrição": "Monitor LED de 24 polegadas", "img": "https://images.pexels.com/photos/5240543/pexels-photo-5240543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
     ];
 
+    export async function GET(request, {params}) {
+        const id = params.id
 
-    return NextResponse.json(eletros)
-}
+        if(id > 0 && id <= eletros.length){
+            return NextResponse.json(eletros.find((eletro=> eletro.id == id)));
+        } else {
+            // Se o ID for inválido ou não existir no array, retorna um erro HTTP 404
+            return id == 0 ? NextResponse.json(eletros) : NextResponse.redirect("http://localhost:3000/error") 
+        }
 
-export async function POST(){
-
-}
-
-export async function DELETE(){
-
-}
-export async function PUT(){
 
 }
+
+// export async function POST(){
+
+// }
+
+// export async function DELETE(){
+
+// }
+// export async function PUT(){
+
+// }

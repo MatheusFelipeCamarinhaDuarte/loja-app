@@ -17,7 +17,10 @@ export default async function EletroView() {
     return (
         <div>
             <h1>Página dos Eletrônicos</h1>
-        
+
+            <div>
+                
+            </div>
             <div className="card-eletro-view">
                 <ul>
                     {
@@ -32,7 +35,7 @@ export default async function EletroView() {
                                         height={200}
                                     /> 
                                     <figcaption>{item.descricao} - R$ <span>{item.preco}</span></figcaption>
-                                </figure>    
+                                </figure>  
                             </li>
                         ))
                     }
