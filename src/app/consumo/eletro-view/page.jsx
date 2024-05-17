@@ -25,7 +25,7 @@ export default async function EletroView() {
     } catch (error) {
         console.log("AQUI");
         console.log(error);
-        // redirect('/error');  // Certifique-se de que esta linha está sendo usada corretamente
+        redirect('/error');  // Certifique-se de que esta linha está sendo usada corretamente
     }
 
     return (
@@ -38,12 +38,12 @@ export default async function EletroView() {
                             <Link href={`/consumo/eletro-view/${item.id}`}>
                                 <h2>{item.nome}</h2>
                                 <figure>
-                                    <Image
+                                    {/* <Image
                                         src={item.img}
                                         alt={item.descricao}
                                         width={300}
                                         height={200}
-                                    />
+                                    /> */}
                                     <figcaption>{item.descricao} - R$ <span>{item.preco}</span></figcaption>
                                 </figure>
                             </Link>

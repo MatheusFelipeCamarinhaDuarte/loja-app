@@ -16,12 +16,12 @@ export default async function page({ params }) {
                 <li key={items.id}>
                     <h2>{items.nome}</h2>
                     <figure>
-                        <Image
+                        {/* <Image
                             src={items.img}
                             alt={items.descricao}
                             width={150}
                             height={200}
-                        />
+                        /> */}
                         <figcaption>{items.descricao} - R$ <span>{items.preco}</span></figcaption>
                     </figure>
                 </li>
