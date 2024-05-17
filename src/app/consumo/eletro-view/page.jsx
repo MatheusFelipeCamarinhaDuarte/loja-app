@@ -27,18 +27,16 @@ export default async function EletroView() {
                     {items.map((item) => (
                         <li key={item.id}>
                             <Link href={`/consumo/eletro-view/${item.id}`}>
-                                <a>
-                                    <h2>{item.nome}</h2>
-                                    <figure>
-                                        <Image
-                                            src={item.img}
-                                            alt={item.descricao}
-                                            width={300}
-                                            height={200}
-                                        />
-                                        <figcaption>{item.descricao} - R$ <span>{item.preco}</span></figcaption>
-                                    </figure>
-                                </a>
+                                <h2>{item.nome}</h2>
+                                <figure>
+                                    <Image
+                                        src={item.img}
+                                        alt={item.descricao}
+                                        width={300}
+                                        height={200}
+                                    />
+                                    <figcaption>{item.descricao} - R$ <span>{item.preco}</span></figcaption>
+                                </figure>
                             </Link>
                         </li>
                     ))}
