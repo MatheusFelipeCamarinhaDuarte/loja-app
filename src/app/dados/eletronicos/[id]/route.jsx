@@ -22,7 +22,7 @@ export async function GET(request, { params }) {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         console.log(apiUrl);
 
-        // Obtém o ID dos parâmetros
+        // Obtém o ID dos parâmetros e converte para número
         const id = parseInt(params.id, 10);
 
         if (id > 0 && id <= eletros.length) {
