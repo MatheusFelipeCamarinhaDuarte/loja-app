@@ -3,10 +3,16 @@ import fs from "fs/promises";
 
         
     export async function GET(request, {params}) {
+        console.log("TEST")
         const file = await fs.readFile(process.cwd() + '/src/app/dados/base/db.json', 'utf8');
+        console.log("TEST")
+        console.log(file)
         const arquivo = JSON.parse(file);
+        console.log(arquivo)
         const eletros = arquivo.eletros;         
+        console.log(eletros)
         const apiUrl = process.env.NEXT_PUBLIC_API_URL
+        console.log(apiUrl)
         const id = params.id
 
         if(id > 0 && id <= eletros.length){
