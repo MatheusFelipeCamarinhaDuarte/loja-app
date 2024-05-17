@@ -25,7 +25,7 @@ export default async function EletroView() {
     } catch (error) {
         console.log("AQUI");
         console.log(error);
-        redirect('/error');  // Certifique-se de que esta linha está sendo usada corretamente
+        // redirect('/error');  // Certifique-se de que esta linha está sendo usada corretamente
     }
 
     return (
