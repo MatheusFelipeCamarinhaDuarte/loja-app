@@ -10,6 +10,7 @@ export default async function EletroView() {
     try {
         const response = await fetch(`${apiUrl}/dados/eletronicos/0`);
         if (!response.ok) {
+            console.log(response)
             throw new Error('Failed to fetch data');
         }
         items = await response.json();
