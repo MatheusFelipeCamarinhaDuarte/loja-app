@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image';
+
 
 export default function ItemsSlug({params}) {
   let imagem = ''
@@ -26,7 +28,7 @@ export default function ItemsSlug({params}) {
     <div>
         <h1>Veja nosso(a): {params.slug}</h1>
         <div>
-            <img src={imagem} width={200} alt={descricao} />
+            <Image src={imagem} width={200} alt={descricao} />
             <p><Link href="/" >Voltar...</Link></p>
         </div>
     </div>
