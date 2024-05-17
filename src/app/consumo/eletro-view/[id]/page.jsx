@@ -1,10 +1,12 @@
 import Image from "next/image";
 
 
-export default async function page({params}) {
+export default async function page({ params }) {
 
-    const id = params.id 
-    const response = await fetch(`http://localhost:3000/dados/eletronicos/${id}`);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+    const id = params.id
+    const response = await fetch(`${apiUrl}/dados/eletronicos/${id}`);
     const items = await response.json();
 
 
@@ -19,11 +21,11 @@ export default async function page({params}) {
                             alt={items.descricao}
                             width={150}
                             height={200}
-                            /> 
+                        />
                         <figcaption>{items.descricao} - R$ <span>{items.preco}</span></figcaption>
-                    </figure>  
+                    </figure>
                 </li>
-                </ul>
+            </ul>
         </div>
     )
 }

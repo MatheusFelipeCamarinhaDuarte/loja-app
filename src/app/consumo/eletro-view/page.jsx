@@ -5,8 +5,10 @@ import { redirect } from "next/navigation";
 export default async function EletroView() {
     let items = [];
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
     try {
-        const response = await fetch('http://localhost:3000/dados/eletronicos/0');
+        const response = await fetch(`${apiUrl}/dados/eletronicos/0`);
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }
